@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>snake</title>
+  <link rel="shortcut icon" href="design/game_icon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="game__menu">
+    <div class="top">
+      <img class="logo" src="design/game_icon.png" alt="">
+      <div class="game__control">
+        <img class="wasd" src="design/wasd.png" alt="">
+
+      </div>
+      <div class="control">
+        <h5>W - To move up</h5>
+        <h5>S - To move down</h5>
+        <h5>A - To go left</h5>
+        <h5>D - To go right</h5>
+      </div>
+
+    </div>
+    <div class="bottom">
+      <div class="goal">
+        <h5>Goal : Eat as many apples as you can!<br>And don't crash at your own tail!</h5>
+      </div>
+      <form action="">
+        <div class="name__submit">
+          <input type="text" placeholder="Name" id="name" class="name__input">
+          <button type="submit" class="btn__start">Start</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="display">
+     <div class="header">
+        <div class="score">
+          <img class="score__img" src="design/score.png" alt="" />
+          <p id="score">0</p>
+        </div>
+        <div class="phytons">
+          <img class="python__img" src="design/phytons.png" alt="" />
+        </div>
+        <div class="time">
+          <div>
+            <img class="time__img" src="design/time.png" alt="" />
+            <p id="current-time">00:00:00</p>
+          </div>
+        </div>
+      </div>
+      <canvas></canvas>
+      <div class="footer">
+        <button type="button" class="reload__btn" href="#">Reload</button>
+      </div>
+  </div>
+</body>
+
+</html>

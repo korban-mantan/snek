@@ -1,10 +1,6 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
-// const img = new Image();
-// img.src = 'design/gameboard.png';
-// img.onload = () => {
-//     ctx.drawImage(img, 0, 0);
-// }
+
 
 class SnakePart {
   constructor(x, y) {
@@ -156,7 +152,6 @@ function checkAppleCollision() {
     appleY = Math.floor(Math.random() * tileCount);
     tailLength++;
     score++;
-    gulpSound.play();
   }
 }
 
@@ -196,9 +191,6 @@ function keyDown(event) {
   }
 }
 
-function isGameOver() {
-  let gameOver = false;
-}
 
 //FUNCTION BUTTON
 const getValueInput = () => {

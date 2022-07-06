@@ -151,6 +151,7 @@ button:active {
 }    
 
 .reload__btn {
+    display: none;
     text-decoration: none;
     background: #18775C;
     color: #FFFFFF;

@@ -50,17 +50,19 @@
     <div class="header">
       <div class="score">
         <div>
-          <img class="score__img" src="design/score.png" alt="" />
+          <img class="score__img" src="design/score.png" alt="Score" />
           <p id="score" class="current-score">0</p>
         </div>
       </div>
       <div class="phytons">
-        <img class="python__img" src="design/phytons.png" alt="" />
+        <img class="python__img" src="design/phytons.png" alt="Phytons" />
       </div>
       <div class="time">
         <div>
-          <img class="time__img" src="design/time.png" alt="" />
-          <p id="current-time" class="current-time">00:00:00</p>
+          <img class="time__img" src="design/time.png" alt="Time" />
+          <p id="current-time">
+            <span id="seconds"></span>: <span id="tens"></span>
+          </p>
         </div>
       </div>
     </div>
@@ -71,7 +73,7 @@
 
 
     <div class="footer">
-      <button type="button" class="reload__btn" href="#">Reload</button>
+      <button type="button" class="reload__btn" id="reload__btn" onclick="refreshPage()">Reload</button>
     </div>
   </div>
 

@@ -30,7 +30,7 @@ let yVelocity = 0;
 
 let score = 0;
 
-const gulpSound = new Audio("gulp.mp3");
+
 
 //game loop
 function drawGame() {
@@ -59,6 +59,7 @@ function drawGame() {
   }
 
   setTimeout(drawGame, 1000 / speed);
+  start();
 }
 
 function isGameOver() {
@@ -106,6 +107,7 @@ function isGameOver() {
     }
 
     ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
+    stop()
   }
 
   return gameOver;
@@ -217,7 +219,14 @@ const getValueInput = () => {
     }else{
         x.style.display = "none";
     }
-
+    
+    let y = document.getElementById('reload__btn');
+    if (y.style.display === "block") {
+        y.style.display = "none";
+    }else{
+      y.style.display = "block"
+    }
+    
     drawGame();
 }
 
@@ -228,4 +237,52 @@ function success() {
     } else {
         document.getElementById('btn__start').disabled = false;
     }
+}
+
+//REFRESH
+function refreshPage() {
+    window.location.reload();
+}
+
+//STOP WATCH
+var seconds = 00;
+var tens = 00;
+var appendTens = document.getElementById("tens");
+var appendSeconds = document.getElementById("seconds");
+var interval;
+
+function startTimer() {
+  tens++;
+
+  if (tens < 9) {
+    appendTens.innerHTML = "0" + tens;
+  }
+  if (tens > 9) {
+    appendTens.innerHTML = tens;
+  }
+  if (tens > 99) {
+    seconds++;
+    appendSeconds.innerHTML = "0" + seconds;
+    tens = 0;
+    appendTens.innerHTML = "0" + 0;
+  }
+  if (seconds > 9) {
+    appendSeconds.innerHTML = seconds
+  }
+}
+
+function start() {
+  interval = setInterval(startTimer);
+}
+
+function stop() {
+  clearInterval(interval);
+}
+
+function reset() {
+    clearInterval(interval);
+    tens = "00";
+    seconds = "00";
+    appendSeconds.innerHTML = seconds;
+    appendTens.innerHTML = tens;
 }

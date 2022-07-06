@@ -4,7 +4,16 @@
     box-sizing: border-box;
     font-family: 'poppins', 'sans-serif';
     
-}
+}    
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #55DDB7;
+}    
 
 button{
     cursor: pointer;
@@ -17,13 +26,39 @@ button:hover {
 button:active {
     background: #0069D9;
 }
+
+/* GAME MENU */
 .game__menu {
     background: white;
     position: absolute;
-    top: 30%;
+    top: 180px;
     border: 3px #000 solid;
     padding: 2rem;
     border-radius: 10px;
+}    
+
+.top {
+    display: flex;
+    gap: 2.5rem;
+}    
+
+.logo {
+    width: 75px;
+    height: 75px;
+}    
+
+.game__control{
+    display: flex;
+    align-items: center;
+}    
+
+.wasd {
+    width: 200px;
+    height: 130px;
+}    
+
+.control h5 {
+    font-size: 32px;
 }
 
 .goal {
@@ -31,11 +66,6 @@ button:active {
     font-size: 28px;
     justify-content: center;
     margin-top: 2.5rem;
-}
-
-.top {
-    display: flex;
-    gap: 2.5rem;
 }
 
 .name__input{
@@ -52,71 +82,67 @@ button:active {
 }
 
 .btn__start {
-    border: 1px #000 solid;
+    border: none;
     border-radius: 5px;
     padding: .5rem;
     background-color:#34baab ;
     color: white;
+
 }
 
-.control h5 {
-    font-size: 32px;
+.btn__start:disabled {
+    background-color: #ddd;
+    cursor: no-drop;
 }
 
-.logo {
-    width: 75px;
-    height: 75px;
-}
-
-.game__control{
-    display: flex;
-    align-items: center;
-}
-
-.wasd {
-    width: 200px;
-    height: 130px;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* DISPLAY GAME */
 
 .display {
     padding: 2rem;
     background-color: #55DDB7;
     width: 1024px;
-    height: 1024px;
-}
+    height: 100vh;
+}    
 
 .header {
     display: grid;
     grid-template-columns: 30% 40% 30%;
     margin-top: 2rem;
-}
+}    
 
 .score {
-    justify-content: left;
-}
+    color: #FFFFFF;
+    display: flex;
+ 
+    font-weight: 600;
+    font-size: 22px;
+}    
 
+.current-score {
+    text-align: center;
+}    
 
 .phytons {
     display: flex;
     justify-content: center;
-}
+}    
 
 .time {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 22px;
     display: flex;
     justify-content: right;
-}
+}    
+
+.current-time {
+    text-align: center;
+}    
 
 .footer {
     display: flex;
     justify-content: center;
-}
+}    
 
 .reload__btn {
     text-decoration: none;
@@ -127,4 +153,6 @@ body {
     border-radius: 100px;
     font-size: 24px;
     cursor: pointer;
-}
+}    
+
+

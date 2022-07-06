@@ -14,9 +14,10 @@
 </head>
 
 <body>
+  <div id="name__user"></div>
+  <div id="score__user"></div>
   
-  <canvas id="game" width="960" height="600"></canvas>
-<!-- <div class="game__menu">
+  <div class="game__menu" id="game__menu">
     <div class="top">
       <img class="logo" src="design/game_icon.png" alt="">
       <div class="game__control">
@@ -37,36 +38,42 @@
       </div>
       <form action="">
         <div class="name__submit">
-          <input type="text" placeholder="Name" id="name" class="name__input">
-          <button type="submit" class="btn__start">Start</button>
+          <input type="text" placeholder="Name" id="name" class="name__input" onkeyup="success()">
+          <button type="button" class="btn__start" id="btn__start" onclick="getValueInput()" disabled>Start</button>
         </div>
       </form>
     </div>
   </div>
   
-
+  
   <div class="display">
-     <div class="header">
-        <div class="score">
+    <div class="header">
+      <div class="score">
+        <div>
           <img class="score__img" src="design/score.png" alt="" />
-          <p id="score">0</p>
-        </div>
-        <div class="phytons">
-          <img class="python__img" src="design/phytons.png" alt="" />
-        </div>
-        <div class="time">
-          <div>
-            <img class="time__img" src="design/time.png" alt="" />
-            <p id="current-time">00:00:00</p>
-          </div>
+          <p id="score" class="current-score">0</p>
         </div>
       </div>
-      <div class="footer">
-        <button type="button" class="reload__btn" href="#">Reload</button>
+      <div class="phytons">
+        <img class="python__img" src="design/phytons.png" alt="" />
       </div>
-  </div> -->
+      <div class="time">
+        <div>
+          <img class="time__img" src="design/time.png" alt="" />
+          <p id="current-time" class="current-time">00:00:00</p>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="game" width="400" height="400"></canvas>
+
+    <div class="footer">
+      <button type="button" class="reload__btn" href="#">Reload</button>
+    </div>
+  </div>
 
   <script src="index.js"></script>
 
 </body>
+
 </html>

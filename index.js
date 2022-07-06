@@ -72,16 +72,16 @@ function isGameOver() {
     return false;
   }
 
-//   //walls
-//   if (headX < 0) {
-//     gameOver = true;
-//   } else if (headX === tileCount) {
-//     gameOver = true;
-//   } else if (headY < 0) {
-//     gameOver = true;
-//   } else if (headY === tileCount) {
-//     gameOver = true;
-//   }
+  //walls
+  if (headX < 0) {
+    gameOver = true;
+  } else if (headX === tileCount) {
+    gameOver = true;
+  } else if (headY < 0) {
+    gameOver = true;
+  } else if (headY === tileCount) {
+    gameOver = true;
+  }
 
   for (let i = 0; i < snakeParts.length; i++) {
     let part = snakeParts[i];
@@ -196,6 +196,9 @@ function keyDown(event) {
   }
 }
 
+function isGameOver() {
+  let gameOver = false;
+}
 
 //FUNCTION BUTTON
 const getValueInput = () => {

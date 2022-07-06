@@ -139,6 +139,12 @@ button:active {
     text-align: center;
 }    
 
+.canvas {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 .footer {
     display: flex;
     justify-content: center;
@@ -153,6 +159,7 @@ button:active {
     border-radius: 100px;
     font-size: 24px;
     cursor: pointer;
+    margin-top: 1rem;
 }    
 
 

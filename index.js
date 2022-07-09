@@ -54,21 +54,16 @@ function drawGame() {
   if (score > 5) {
     speed = 9;
   }
-  if (score > 10) {
-    speed = 11;
-  }
-
   setTimeout(drawGame, 1000 / speed);
-  start();
 }
 
 function isGameOver() {
   let gameOver = false;
-
+  
   if (yVelocity === 0 && xVelocity === 0) {
     return false;
   }
-
+  
   //walls
   if (headX < 0) {
     gameOver = true;
@@ -87,7 +82,7 @@ function isGameOver() {
       break;
     }
   }
-
+  
   if (gameOver) {
     ctx.fillStyle = "white";
     ctx.font = "50px Verdana";
@@ -95,7 +90,7 @@ function isGameOver() {
     if (gameOver) {
       ctx.fillStyle = "white";
       ctx.font = "50px Verdana";
-
+      
       var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
       gradient.addColorStop("0", " magenta");
       gradient.addColorStop("0.5", "blue");
@@ -107,9 +102,8 @@ function isGameOver() {
     }
 
     ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
-    stop()
   }
-
+  
   return gameOver;
 }
 
@@ -167,7 +161,7 @@ function keyDown(event) {
     inputsYVelocity = -1;
     inputsXVelocity = 0;
   }
-
+  
   //down
   if (event.keyCode == 40 || event.keyCode == 83) {
     // 83 is s
@@ -228,6 +222,7 @@ const getValueInput = () => {
     }
     
     drawGame();
+    start();
 }
 
 //DISABLE BUTTON
@@ -251,24 +246,30 @@ var appendTens = document.getElementById("tens");
 var appendSeconds = document.getElementById("seconds");
 var interval;
 
-function startTimer() {
-  tens++;
-
-  if (tens < 9) {
+function startTimer () {
+  tens++; 
+  
+  if(tens <= 9){
     appendTens.innerHTML = "0" + tens;
   }
-  if (tens > 9) {
+  
+  if (tens > 9){
     appendTens.innerHTML = tens;
-  }
+    
+  } 
+  
   if (tens > 99) {
+    console.log("seconds");
     seconds++;
     appendSeconds.innerHTML = "0" + seconds;
     tens = 0;
     appendTens.innerHTML = "0" + 0;
   }
-  if (seconds > 9) {
-    appendSeconds.innerHTML = seconds
+  
+  if (seconds > 9){
+    appendSeconds.innerHTML = seconds;
   }
+
 }
 
 function start() {
